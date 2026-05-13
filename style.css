@@ -1,0 +1,458 @@
+﻿/* --- 原始樣式開始 --- */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+
+:root {
+
+    --white: #FFFFFF;
+
+    --black: #1D1D1F; 
+
+    --accent: #2D6A4F;
+
+    --bg-soft: #F5F5F7;
+
+    --text-sub: #86868B;
+
+    --glass-blur: blur(30px) saturate(180%);
+
+    --radius: 32px;
+
+    --uni-title-size: 3rem;
+
+    --nav-height: 80px; 
+
+}
+
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+
+    font-family: -apple-system, 'SF Pro Display', 'Noto Sans TC', sans-serif;
+
+    background-color: var(--white); color: var(--black); line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+
+.scroll-offset {
+
+    scroll-margin-top: var(--nav-height);
+
+}
+
+
+
+.master-nav {
+
+    position: fixed; top: 0; width: 100%; z-index: 9999;
+
+    padding: 15px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    height: var(--nav-height);
+
+}
+
+.glass-heavy {
+
+    backdrop-filter: var(--glass-blur);
+
+    background: rgba(255, 255, 255, 0.75);
+
+}
+
+.nav-container { width: 90%; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
+.nav-logo { height: 50px; }
+
+.brand-name { font-weight: 900; font-size: 1.1rem; }
+
+.nav-menu { display: flex; list-style: none; gap: 40px; }
+
+.nav-menu a { 
+
+    text-decoration: none; color: var(--black); font-size: 0.85rem; 
+
+    font-weight: 600; opacity: 0.6; transition: 0.3s;
+
+}
+
+.nav-menu a:hover { opacity: 1; color: var(--accent); }
+
+.nav-cta { background: var(--black); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: 0.3s; }
+
+.nav-cta:hover { background: var(--accent); transform: scale(1.05); }
+
+
+
+.hero-box { height: 95vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+
+.hero-image { position: absolute; width: 100%; height: 100%; z-index: -1; }
+
+.hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-content { text-align: center; color: white; }
+
+.hero-title { font-size: 5rem; font-weight: 900; line-height: 1.1; letter-spacing: -2px; }
+
+.hero-title .light { font-weight: 100; opacity: 0.8; }
+
+
+
+.content-block { padding: 100px 0; }
+
+.bg-soft { background-color: var(--bg-soft); }
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+.container-wide { width: 95%; max-width: 1600px; margin: 0 auto; }
+
+
+
+.module-card { display: flex; align-items: stretch; padding: 60px; border-radius: var(--radius); gap: 60px; }
+
+.glass-light { background: rgba(255, 255, 255, 0.65); backdrop-filter: var(--glass-blur); border: 1px solid rgba(255,255,255,0.4); }
+
+.module-card.reverse { flex-direction: row-reverse; }
+
+
+
+.text-side { flex: 0.9 !important; display: flex; flex-direction: column; justify-content: center; }
+
+.expansive-img { flex: 1.1 !important; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.12); position: relative; }
+
+.expansive-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+
+.expansive-img:hover img { transform: scale(1.03); }
+
+
+
+.feature-stack { display: flex; flex-direction: column; gap: 18px; }
+
+.feature-card { display: flex; background: rgba(255,255,255,0.4); padding: 18px 22px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.6); transition: 0.3s; }
+
+.feature-card:hover { transform: translateX(8px); background: white; border: 1px solid var(--accent); }
+
+.feature-icon-bar { width: 4px; height: 30px; background: var(--accent); border-radius: 10px; margin-right: 15px; margin-top: 5px; opacity: 0.3; }
+
+
+
+.gradient-transition { background: linear-gradient(to bottom, var(--white) 0%, var(--black) 100%); padding-bottom: 150px; }
+
+.column-layout { flex-direction: column; text-align: center; }
+
+.scenario-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 30px 0 50px; }
+
+.scenario-item { background: rgba(255, 255, 255, 0.7); padding: 12px 25px; border-radius: 12px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(0,0,0,0.05); transition: 0.3s; }
+
+.scenario-item:hover { background: var(--accent); color: white; transform: translateY(-5px); }
+
+
+
+.module-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; }
+
+.gallery-item { position: relative; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.img-caption { position: absolute; bottom: 0; width: 100%; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(15px); color: var(--black); font-weight: 700; padding: 15px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.3); }
+
+
+
+.dark-mode { background-color: var(--black); margin-top: -1px; }
+
+.glass-dark { background: rgba(30, 30, 32, 0.85); color: white; border: 1px solid rgba(255,255,255,0.05); padding: 60px; }
+
+.tech-line { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+
+
+.action-card { padding: 80px; border-radius: var(--radius); text-align: center; max-width: 900px; margin: 0 auto; }
+
+.badge-row { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
+
+.badge-row span { background: rgba(0,0,0,0.05); padding: 8px 20px; border-radius: 10px; font-weight: 700; font-size: 0.85rem; }
+
+.master-btn { background: var(--black); color: white; border: none; padding: 22px 60px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.3s; }
+
+
+
+.index { font-family: 'Montserrat'; font-weight: 700; color: var(--accent); letter-spacing: 3px; display: block; margin-bottom: 10px; }
+
+.title { font-size: var(--uni-title-size); font-weight: 900; margin-bottom: 25px; line-height: 1.1; }
+
+.data-row { display: flex; gap: 40px; margin-top: 30px; }
+
+.data-item strong { display: block; font-size: 2.8rem; color: var(--accent); font-family: 'Montserrat'; }
+
+
+
+[data-anim] { opacity: 0; transform: translateY(40px); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.is-visible { opacity: 1; transform: translateY(0); }
+
+.master-footer { padding: 80px 0; text-align: center; opacity: 0.5; color: var(--text-sub); }
+
+
+
+@media (max-width: 1024px) {
+
+    .module-card { flex-direction: column !important; padding: 40px 20px; }
+
+    .text-side, .expansive-img { flex: 1 !important; width: 100%; }
+
+    .expansive-img { height: 350px; }
+
+    .hero-title { font-size: 3.5rem; }
+
+}
+
+
+
+/* --- 追加樣式：3+2 佈局與輪播功能 --- */
+
+.cabin-grid { 
+
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; 
+
+}
+
+.cabin-card { 
+
+    flex: 0 1 calc(33.333% - 25px); min-width: 300px; 
+
+    border-radius: 20px; overflow: hidden; background: white; 
+
+    border: 1px solid rgba(0,0,0,0.05); transition: 0.4s;
+
+}
+
+.cabin-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+
+
+.carousel-container { position: relative; height: 220px; overflow: hidden; }
+
+.carousel-track { display: flex; transition: 0.5s ease; height: 100%; }
+
+.carousel-slide { flex: 0 0 100%; height: 100%; }
+
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.7); border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; z-index: 5; }
+
+.prev { left: 10px; } .next { right: 10px; }
+
+.carousel-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
+
+.carousel-dot { width: 6px; height: 6px; background: rgba(255,255,255,0.4); border-radius: 50%; cursor: pointer; }
+
+.carousel-dot.active { background: white; width: 15px; border-radius: 10px; }
+
+
+
+.cabin-info { padding: 25px; }
+
+.cabin-tag { font-size: 0.7rem; font-weight: 800; color: var(--accent); background: rgba(45,106,79,0.1); padding: 4px 12px; border-radius: 50px; margin-bottom: 12px; display: inline-block; }
+
+.cabin-info h3 { font-size: 1.25rem; font-weight: 900; margin-bottom: 8px; }
+
+.cabin-info p { font-size: 0.9rem; color: var(--text-sub); }
+
+
+
+/* --- 追加樣式：聯絡資訊 --- */
+
+.contact-info-box {
+
+    margin: 20px 0 30px;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,0.02);
+
+    border-radius: 15px;
+
+}
+
+.contact-item {
+
+    font-size: 1rem;
+
+    margin: 8px 0;
+
+    color: var(--black);
+
+}
+
+.footer-info {
+
+    margin-bottom: 20px;
+
+}
+
+.footer-info p {
+
+    margin: 5px 0;
+
+    font-size: 0.85rem;
+
+}
+
+
+
+@media (max-width: 1024px) {
+
+    .cabin-card { flex: 0 1 calc(50% - 25px); }
+
+}
+
+@media (max-width: 768px) {
+
+    .cabin-card { flex: 0 1 100%; }
+
+}
+
+/* 針對左上角品牌區域進行置中 */
+
+.brand {
+
+    display: flex;
+
+    align-items: center; /* 垂直置中關鍵 */
+
+    gap: 12px;           /* 控制 LOGO 與文字之間的間距 */
+
+    height: 100%;        /* 確保容器撐滿導覽列高度 */
+
+}
+
+
+
+/* 確保 LOGO 圖片本身不會變形且對齊 */
+
+.nav-logo {
+
+    height: 50px;        /* 你原本設定的高度 */
+
+    width: auto;
+
+    display: block;      /* 消除圖片下方微小的間隙 */
+
+}
+
+
+
+/* 品牌名稱微調 */
+
+.brand-name {
+
+    line-height: 1;      /* 移除文字預設的行高干擾，讓對齊更精準 */
+
+}
+/* --- 手機版 RWD 優化專用樣式 --- */
+
+@media (max-width: 768px) {
+    /* 1. 導覽列調整 */
+    .nav-container {
+        padding: 0 20px;
+    }
+    .nav-menu {
+        display: none; /* 預設隱藏傳統選單，或可改為下方捲動式 */
+    }
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    /* 2. Hero 區塊縮小字體，避免斷句過於破碎 */
+    .hero-title {
+        font-size: 2.8rem;
+        padding: 0 15px;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+        padding: 0 20px;
+    }
+
+    /* 3. 核心區塊：強制轉為縱向堆疊 */
+    .module-card {
+        padding: 30px 20px !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+    .module-card.reverse {
+        flex-direction: column !important; /* 移除電腦版的反向排序 */
+    }
+
+    /* 4. 圖片高度與顯示修正 (解決圖片不見或溢出問題) */
+    .expansive-img, .module-img-box {
+        width: 100% !important;
+        height: 250px !important; /* 手機版固定一個合適的高度 */
+        flex: none !important;
+    }
+    .expansive-img img, .module-img-box img {
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* 5. 艙體卡片 (Cabin Grid) 調整為一排一個 */
+    .cabin-card {
+        flex: 0 1 100% !important;
+        margin-bottom: 10px;
+    }
+
+    /* 6. 技術規格與特徵卡片調整 */
+    .feature-card {
+        padding: 15px;
+    }
+    .feature-card:hover {
+        transform: none; /* 移除手機端的移動特效，避免誤觸 */
+    }
+    .tech-specs {
+        font-size: 0.9rem;
+    }
+
+    /* 7. 多元應用藝廊 (Gallery) 轉為一排一個 */
+    .module-gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    .gallery-item {
+        height: 300px;
+    }
+
+    /* 8. 底部行動呼籲區塊 (Action Card) */
+    .action-card {
+        padding: 40px 20px !important;
+    }
+    .badge-row {
+        flex-wrap: wrap; /* 標籤自動換行 */
+        gap: 10px;
+    }
+    .master-btn {
+        width: 100%; /* 按鈕撐滿手機寬度 */
+        padding: 18px 0;
+    }
+    
+    /* 9. 標題大小統一縮小 */
+    :root {
+        --uni-title-size: 2rem;
+    }
+}
+
+/* 額外修正：解決橫向溢出問題 */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+}
